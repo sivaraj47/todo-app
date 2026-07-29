@@ -29,6 +29,10 @@ const tasklist = document.getElementById("tasklist");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+      let saveTask = () => {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+      };
+
 const addTask = () => {
 
   if(taskinput.value.trim() === ""){
