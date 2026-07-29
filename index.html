@@ -60,6 +60,18 @@ const deleteTask = (index) => {
 tasks = tasks.filter((task,i) => i !== index);
  renderTasks();
 };
+const editTask = (index) => {
+const updateTask = prompt("Edit Task", task[index]);
+
+    if(updateTask === null) return;
+
+    if(updateTask.trim()===""){
+        alert("Task can not be empty");
+    }
+    tasks[index] = updateTask.trim();
+     renderTasks();
+};
+      
 addBtn.addEventListener("click", addTask);
   </script>
 </body>
