@@ -39,7 +39,7 @@ const addTask = () => {
     alert("please fill the input");
     return;
   }
-  tasks.push(taskinput.value);
+  tasks.push(taskinput.value.trim());
   taskinput.value = "";  
       saveTask();
   renderTasks();
@@ -84,6 +84,7 @@ const updateTask = prompt("Edit Task", tasks[index]);
 };
       
 addBtn.addEventListener("click", addTask);
+          renderTasks();
   </script>
 </body>
 </html>
