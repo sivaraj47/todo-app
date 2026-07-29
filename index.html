@@ -27,7 +27,7 @@ button{
 const addBtn =  document.getElementById("addBtn");
 const tasklist = document.getElementById("tasklist");
 
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 const addTask = () => {
 
