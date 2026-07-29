@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: "Montserrat", sans-serif;
+}
+input{
+  font-family: "Montserrat", sans-serif;
+  padding:5px;
+}
+button{
+  font-family: "Montserrat", sans-serif;
+  padding:5px;
+}
+</style>
+<body>
+<h1>JavaScript Statements</h1>
+
+<input type="text" id="taskinput" placeholder="Enter task"/>
+<button id="addBtn">Add</button>
+<ul id="tasklist"></ul>
+
+  <script>
+    const  taskinput = document.getElementById("taskinput");
+const addBtn =  document.getElementById("addBtn");
+const tasklist = document.getElementById("tasklist");
+
+let tasks = [];
+
+const addTask = () => {
+
+  if(taskinput.value.trim() === ""){
+    alert("please fill the input");
+    return;
+  }
+  tasks.push(taskinput.value);
+  taskinput.value = "";  
+  renderTasks();
+};      
+
+
+
+const renderTasks = () => {
+
+  tasklist.innerHTML = "";
+  tasks.forEach((task, index) => {
+
+    tasklist.innerHTML += `<li>${task}
+    <button onclick="deleteTask(${index})">X</button>
+    <button onclick="updateTask(${index})">x</button>
+    </li>`;
+  });
+  
+};
+
+
+const deleteTask = (index) => {
+tasks = tasks.filter((task,i) => i !== index);
+ renderTasks();
+};
+addBtn.addEventListener("click", addTask);
+  </script>
+</body>
+</html>
