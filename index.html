@@ -42,7 +42,7 @@ const addTask = () => {
   tasks.push(taskinput.value);
   taskinput.value = "";  
   renderTasks();
-     saveTasks();
+     saveTask();
 };      
 
 
@@ -64,7 +64,7 @@ const renderTasks = () => {
 const deleteTask = (index) => {
 tasks = tasks.filter((task,i) => i !== index);
  renderTasks();
-     saveTasks();
+     saveTask();
 };
 const editTask = (index) => {
 const updateTask = prompt("Edit Task", tasks[index]);
@@ -76,7 +76,7 @@ const updateTask = prompt("Edit Task", tasks[index]);
     }
     tasks[index] = updateTask.trim();
      renderTasks();
-     saveTasks();
+     saveTask();
 };
       
 addBtn.addEventListener("click", addTask);
