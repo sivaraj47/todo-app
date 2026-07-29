@@ -61,7 +61,7 @@ tasks = tasks.filter((task,i) => i !== index);
  renderTasks();
 };
 const editTask = (index) => {
-const updateTask = prompt("Edit Task", task[index]);
+const updateTask = prompt("Edit Task", tasks[index]);
 
     if(updateTask === null) return;
 
