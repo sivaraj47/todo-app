@@ -75,6 +75,7 @@ const updateTask = prompt("Edit Task", tasks[index]);
 
     if(updateTask.trim()===""){
         alert("Task can not be empty");
+          return;
     }
     tasks[index] = updateTask.trim();
       saveTask();
