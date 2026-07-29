@@ -63,6 +63,9 @@ const renderTasks = () => {
 
 
 const deleteTask = (index) => {
+
+    const isDelete = confirm("Are you share want to delete this task?");
+    if(!isDelete) return;
 tasks = tasks.filter((task,i) => i !== index);
     saveTask();
  renderTasks();
